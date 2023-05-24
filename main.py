@@ -15,5 +15,31 @@ def selection_sort(num_list):
         num_list.pop(num_list.index(min_num))
     return num_list_sorted
 
-print(selection_sort(num_list))
+def binary_search(number, sorted_list):
+    result_ok = False
+    first = 0
+    last = len(sorted_list) - 1
+    print(last)
+    while first < last:
+        middle = (first + last) // 2
+        print(sorted_list [middle])
+        if number == sorted_list[middle]:
+            first = middle
+            last = first
+            result_ok = True
+            position = middle
+        else:
+            if number > sorted_list[middle]:
+                first = middle + 1
+            else:
+                last = middle - 1
+
+    if result_ok:
+        print(f"Element was found on position {position}")
+    else:
+        print("Element was not found")
+
+sorted_list = selection_sort(num_list)
+print(sorted_list)
+binary_search(15, sorted_list)
 
