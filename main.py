@@ -22,7 +22,6 @@ def binary_search(number, sorted_list):
     print(last)
     while first < last:
         middle = (first + last) // 2
-        print(sorted_list [middle])
         if number == sorted_list[middle]:
             first = middle
             last = first
